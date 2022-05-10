@@ -20,6 +20,9 @@ Redis 相比 Memcached 来说，拥有[更多的数据结构](/docs/high-concurr
 
 在 Redis3.x 版本中，便能支持 cluster 模式，而 Memcached 没有原生的集群模式，需要依靠客户端来实现往集群中分片写入数据。
 
+#### memcached 的特性
+多线程；不能持久化；互不通信的Memcached之间具有分布特征，各自独立存取数据，不共享任何信息，分布式部署取决于memcache客户端；没有管道和事务；场景：电商场景中用于页面数据的缓存，
+
 #### 性能对比
 
 由于 Redis 只使用**单核**，而 Memcached 可以使用**多核**，所以平均每一个核上 Redis 在存储小数据时比 Memcached 性能更高。而在 100k 以上的数据中，Memcached 性能要高于 Redis。虽然 Redis 最近也在存储大数据的性能上进行优化，但是比起 Memcached，还是稍有逊色。
